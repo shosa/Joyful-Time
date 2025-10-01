@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-night-blue: #192a56;
-  --color-electric-fuchsia: #FF00FF;
-  --color-soft-pink: #FFE5F4;
-  --color-soft-blue: #E8F4FF;
+  /* Palette colori Joyful Time */
+  --color-oxford-blue: #141E3B;
+  --color-orange-web: #FEA30D;
+  --color-orange-peel: #FFA00C;
+  --color-platinum: #E5E4E4;
+  --color-anti-flash-white: #EEEEEE;
+  --color-black: #020308;
+
+  /* Colori secondari per decorazioni */
+  --color-soft-orange: #ffecce;
+  --color-light-blue: #bec9e9;
 
   --font-family-serif-elegant: 'Playfair Display', serif;
   --font-family-sans-modern: 'Poppins', sans-serif;
