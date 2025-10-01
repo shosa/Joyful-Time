@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Script from 'next/script';
 import Header from '@/components/Header';
 
@@ -39,6 +39,42 @@ export default function Home() {
     success: '',
     error: '',
   });
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showOverlay, setShowOverlay] = useState(true);
+
+  const handlePlayVideo = () => {
+    if (videoRef.current) {
+      setShowOverlay(false);
+      videoRef.current.play();
+    }
+  };
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+      section.classList.add('opacity-0');
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -124,18 +160,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Spot Video Section */}
-        <section className="relative h-screen w-full bg-black flex items-center justify-center overflow-hidden">
-          <video
-            controls
-            className="w-full h-full object-contain"
-            poster="/logo.png"
-          >
-            <source src="/spot.mp4" type="video/mp4" />
-            Il tuo browser non supporta il tag video.
-          </video>
-        </section>
-
         {/* About Us Section */}
         <section id="chi-siamo" className="relative py-20 bg-gradient-to-br from-white via-soft-orange/20 to-white overflow-hidden">
           {/* Decorative circles */}
@@ -207,7 +231,7 @@ export default function Home() {
               
               {/* Service Card 1: Matrimoni */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-orange-web/50">
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('https://source.unsplash.com/random/600x800/?wedding,ceremony')"}}></div>
+                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/matrimoni.jpg')"}}></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-orange-web/50 group-hover:from-orange-web/70 group-hover:to-pink-600/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -222,7 +246,7 @@ export default function Home() {
 
               {/* Service Card 2: Eventi Privati */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-oxford-blue/50">
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('https://source.unsplash.com/random/600x800/?private,party,birthday')"}}></div>
+                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/private.jpg')"}}></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-oxford-blue/50 group-hover:from-oxford-blue/70 group-hover:to-blue-900/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -237,7 +261,7 @@ export default function Home() {
 
               {/* Service Card 3: Piazze & Locali */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/50">
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('https://source.unsplash.com/random/600x800/?concert,public,event')"}}></div>
+                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/piazze.jpg')"}}></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-gray-800/50 group-hover:from-purple-900/70 group-hover:to-gray-800/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -330,6 +354,39 @@ export default function Home() {
               />
             </a>
           </div>
+        </section>
+
+        {/* Spot Video Section */}
+        <section className="relative h-screen w-full bg-gradient-to-br from-oxford-blue via-black to-oxford-blue flex items-center justify-center overflow-hidden">
+          {/* Video */}
+          <video
+            ref={videoRef}
+            loop
+            playsInline
+            controls={!showOverlay}
+            className="w-full h-full object-cover"
+            poster="/logo.png"
+          >
+            <source src="/spot.mp4" type="video/mp4" />
+          </video>
+
+          {/* Play Overlay */}
+          {showOverlay && (
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 transition-all duration-500 cursor-pointer"
+              onClick={handlePlayVideo}
+            >
+              <div className="text-center">
+                <h3 className="text-5xl md:text-6xl font-serif-elegant text-white mb-6 drop-shadow-2xl">Guarda il Nostro Spot</h3>
+                <p className="text-xl md:text-2xl font-sans-modern text-white/90 mb-8 drop-shadow-lg">Scopri l&apos;emozione dei nostri eventi</p>
+                <div className="flex items-center justify-center gap-4">
+                  <svg className="w-20 h-20 text-orange-web animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* Contact Section */}
