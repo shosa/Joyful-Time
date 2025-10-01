@@ -133,25 +133,53 @@ export default function Home() {
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/40"></div>
 
-          {/* Glass morphism card */}
-          <div className="relative text-center backdrop-blur-md bg-white/30 p-12 rounded-3xl shadow-2xl border border-white/50 max-w-3xl mx-4">
+          {/* Glass morphism card with organic shape */}
+          <div className="relative text-center max-w-3xl mx-6 md:mx-4">
+            {/* Secondary shape - behind main card */}
+            <div className="absolute inset-0 backdrop-blur-sm bg-white/10 border border-white/20 transform rotate-6 scale-105" style={{ borderRadius: '55% 45% 40% 60% / 50% 60% 40% 50%' }}></div>
+
+            {/* Main card */}
+            <div className="relative backdrop-blur-md bg-white/30 p-6 md:p-12 shadow-2xl border border-white/50 overflow-hidden" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}>
+              {/* Inner decorative gradients */}
+              <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+                background: 'radial-gradient(ellipse at 30% 20%, rgba(254, 163, 13, 0.3) 0%, transparent 50%)',
+              }}></div>
+              <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-oxford-blue/10 to-transparent rounded-full blur-3xl -mb-20 -mr-20"></div>
+
             <div
-              className="flex justify-center mb-6 opacity-0 animate-fade-in"
+              className="flex justify-center mb-4 md:mb-6 opacity-0 animate-fade-in relative z-10"
               style={{ animationDelay: '0.5s' }}
             >
               <img
                 src="/logo.png"
                 alt="Joyful Time"
-                className="h-24 md:h-32"
+                className="h-16 md:h-32"
+                style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3)) brightness(0.85) contrast(1.1)', mixBlendMode: 'multiply', opacity: 0.7 }}
               />
             </div>
+
+            {/* Rating Stars */}
+            <div className="flex justify-center gap-1 mb-3 md:mb-4 opacity-0 animate-fade-in relative z-10" style={{ animationDelay: '0.7s' }}>
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-5 h-5 md:w-6 md:h-6 text-orange-web" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                </svg>
+              ))}
+            </div>
+
+            {/* Matrimonio.com badge */}
+            <div className="flex items-center justify-center gap-2 mb-4 md:mb-6 opacity-0 animate-fade-in relative z-10" style={{ animationDelay: '0.9s' }}>
+              <span className="text-xs md:text-sm font-sans-modern text-gray-700">Partner di</span>
+              <img src="/mat_logo.svg" alt="Matrimonio.com" className="h-5 md:h-6" />
+            </div>
+
             <p
-              className="text-xl md:text-2xl font-sans-modern text-gray-800 mb-8 opacity-0 animate-fade-in"
-              style={{ animationDelay: '1s' }}
+              className="text-lg md:text-2xl font-sans-modern text-gray-800 mb-6 md:mb-8 opacity-0 animate-fade-in relative z-10"
+              style={{ animationDelay: '1.1s' }}
             >
               Dedizione e professionalità per il tuo evento perfetto
             </p>
-            <div>
+            <div className="relative z-10 hidden md:block">
                 <button
                   className="bg-gradient-to-r from-orange-web to-orange-peel text-white font-bold py-4 px-10 rounded-full transition-all duration-300 text-lg relative overflow-hidden group opacity-0 animate-fade-in shadow-lg hover:shadow-2xl hover:scale-105"
                   style={{ animationDelay: '1.5s' }}
@@ -159,6 +187,7 @@ export default function Home() {
                   <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></span>
                   <span className="relative">Scrivici su WhatsApp</span>
                 </button>
+              </div>
             </div>
           </div>
         </section>
@@ -252,8 +281,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
               {/* Service Card 1: Matrimoni */}
-              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-orange-web/50">
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/matrimoni.jpg')"}}></div>
+              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 will-change-transform transition-all duration-500 hover:-translate-y-2 hover:shadow-orange-web/50">
+                <div className="absolute inset-0 bg-cover bg-center will-change-transform transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/matrimoni.jpg')"}}></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-orange-web/50 group-hover:from-orange-web/70 group-hover:to-pink-600/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -267,8 +296,8 @@ export default function Home() {
               </div>
 
               {/* Service Card 2: Eventi Privati */}
-              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-oxford-blue/50">
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/private.jpg')"}}></div>
+              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 will-change-transform transition-all duration-500 hover:-translate-y-2 hover:shadow-oxford-blue/50">
+                <div className="absolute inset-0 bg-cover bg-center will-change-transform transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/private.jpg')"}}></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-oxford-blue/50 group-hover:from-oxford-blue/70 group-hover:to-blue-900/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -282,8 +311,8 @@ export default function Home() {
               </div>
 
               {/* Service Card 3: Piazze & Locali */}
-              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/50">
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/piazze.jpg')"}}></div>
+              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 will-change-transform transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/50">
+                <div className="absolute inset-0 bg-cover bg-center will-change-transform transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/piazze.jpg')"}}></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-gray-800/50 group-hover:from-purple-900/70 group-hover:to-gray-800/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
