@@ -174,10 +174,10 @@ export default function Home() {
             </div>
 
             <p
-              className="text-lg md:text-2xl font-sans-modern text-gray-800 mb-6 md:mb-8 opacity-0 animate-fade-in relative z-10"
+              className="text-lg md:text-2xl font-sans-modern text-gray-800 mb-6 md:mb-8 opacity-0 animate-fade-in relative z-10 px-16"
               style={{ animationDelay: '1.1s' }}
             >
-              Dedizione e professionalità per il tuo evento perfetto
+              Crea emozioni, costruisce ricordi.
             </p>
             <div className="relative z-10 hidden md:block">
                 <button
@@ -246,8 +246,8 @@ export default function Home() {
           <div className="absolute -left-32 bottom-1/4 w-72 h-72 bg-gold-dark/15 rounded-full"></div>
 
           {/* Wave decoration top */}
-          <svg className="absolute top-0 left-0 w-full h-32 opacity-20 rotate-180" preserveAspectRatio="none" viewBox="0 0 1440 320">
-            <path fill="#141E3B" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          <svg className="absolute top-0 left-0 w-full h-32 opacity-100 rotate-180" preserveAspectRatio="none" viewBox="0 0 1440 320">
+            <path fill="#000000" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
 
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">

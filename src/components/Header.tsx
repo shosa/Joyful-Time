@@ -20,7 +20,7 @@ const Header = () => {
       <header
         className={`p-4 fixed w-full z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-gradient-to-r from-oxford-blue via-black to-oxford-blue shadow-lg'
+            ? 'bg-gradient-to-r from-black via-black to-grey-300 shadow-lg'
             : 'bg-white/90 backdrop-blur-md shadow-md'
         }`}>
         <div className="container mx-auto flex justify-between items-center">
