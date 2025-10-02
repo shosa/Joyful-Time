@@ -208,15 +208,15 @@ export default function Home() {
         <section id="chi-siamo" className="relative py-20 bg-gradient-to-br from-white via-soft-orange/20 to-white overflow-hidden">
           {/* Decorative shapes */}
           <div className="absolute top-20 right-10 w-40 h-40 rounded-full bg-light-blue/30 blur-3xl animate-pulse-slow"></div>
-          <div className="absolute bottom-40 left-20 w-60 h-60 rounded-full bg-soft-orange/30 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-40 left-20 w-60 h-60 rounded-full bg-gold-bright/30 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
           {/* Solid shapes */}
-          <div className="absolute -left-20 top-1/4 w-64 h-64 bg-orange-web/10 rounded-full"></div>
+          <div className="absolute -left-20 top-1/4 w-64 h-64 bg-gold-dark/10 rounded-full"></div>
           <div className="absolute -right-32 bottom-1/3 w-96 h-96 bg-oxford-blue/10 rounded-full"></div>
 
           {/* Wave decoration */}
           <svg className="absolute bottom-0 left-0 w-full h-32 opacity-20" preserveAspectRatio="none" viewBox="0 0 1440 320">
-            <path fill="#FEA30D" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#D4AF37" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,133.3C672,139,768,181,864,181.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
 
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
@@ -238,12 +238,12 @@ export default function Home() {
         {/* Second About Section - Inverted Layout */}
         <section className="relative py-20 bg-white overflow-hidden">
           {/* Decorative circles */}
-          <div className="absolute top-40 left-10 w-52 h-52 rounded-full bg-orange-web/20 blur-3xl animate-pulse-slow"></div>
+          <div className="absolute top-40 left-10 w-52 h-52 rounded-full bg-gold-bright/20 blur-3xl animate-pulse-slow"></div>
           <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-light-blue/30 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
           {/* Solid shapes */}
           <div className="absolute -right-20 top-1/3 w-80 h-80 bg-light-blue/15 rounded-full"></div>
-          <div className="absolute -left-32 bottom-1/4 w-72 h-72 bg-orange-peel/15 rounded-full"></div>
+          <div className="absolute -left-32 bottom-1/4 w-72 h-72 bg-gold-dark/15 rounded-full"></div>
 
           {/* Wave decoration top */}
           <svg className="absolute top-0 left-0 w-full h-32 opacity-20 rotate-180" preserveAspectRatio="none" viewBox="0 0 1440 320">
@@ -272,20 +272,20 @@ export default function Home() {
         {/* Services Section */}
         <section id="servizi" className="relative py-20 bg-gradient-to-br from-light-blue/30 via-white to-soft-orange/30 overflow-hidden">
           {/* Floating shapes */}
-          <div className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-orange-web/20 blur-2xl animate-float"></div>
+          <div className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-gold-bright/20 blur-2xl animate-float"></div>
           <div className="absolute bottom-0 right-1/4 w-40 h-40 rounded-full bg-oxford-blue/20 blur-2xl animate-float" style={{ animationDelay: '3s' }}></div>
 
           {/* Solid geometric shapes */}
-          <div className="absolute -left-24 top-1/2 w-96 h-96 bg-orange-web/8 rounded-full"></div>
+          <div className="absolute -left-24 top-1/2 w-96 h-96 bg-gold/8 rounded-full"></div>
           <div className="absolute -right-24 top-1/4 w-80 h-80 bg-oxford-blue/8 rounded-full"></div>
 
           {/* Triangular shapes */}
-          <div className="absolute left-10 bottom-20 w-0 h-0 border-l-[100px] border-l-transparent border-r-[100px] border-r-transparent border-b-[150px] border-b-orange-peel/10 rotate-45"></div>
+          <div className="absolute left-10 bottom-20 w-0 h-0 border-l-[100px] border-l-transparent border-r-[100px] border-r-transparent border-b-[150px] border-b-gold-dark/10 rotate-45"></div>
           <div className="absolute right-10 top-32 w-0 h-0 border-l-[80px] border-l-transparent border-r-[80px] border-r-transparent border-b-[120px] border-b-light-blue/15 -rotate-12"></div>
 
           {/* Wave decoration */}
           <svg className="absolute top-0 left-0 w-full h-24 opacity-15" preserveAspectRatio="none" viewBox="0 0 1440 320">
-            <path fill="#FFA00C" d="M0,64L60,80C120,96,240,128,360,133.3C480,139,600,117,720,112C840,107,960,117,1080,138.7C1200,160,1320,192,1380,208L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+            <path fill="#FFD700" d="M0,64L60,80C120,96,240,128,360,133.3C480,139,600,117,720,112C840,107,960,117,1080,138.7C1200,160,1320,192,1380,208L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
           </svg>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -344,7 +344,7 @@ export default function Home() {
         {/* Reviews Section */}
         <section id="recensioni" className="relative py-20 bg-gradient-to-br from-white via-light-blue/20 to-soft-orange/20 overflow-hidden">
           {/* Animated decorations */}
-          <div className="absolute top-10 left-10 w-48 h-48 rounded-full bg-orange-web/10 blur-3xl animate-pulse-slow"></div>
+          <div className="absolute top-10 left-10 w-48 h-48 rounded-full bg-gold/10 blur-3xl animate-pulse-slow"></div>
           <div className="absolute bottom-10 right-10 w-56 h-56 rounded-full bg-oxford-blue/10 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -402,12 +402,12 @@ export default function Home() {
         {/* Matrimonio.com Section */}
         <section className="relative py-16 bg-gradient-to-br from-white via-soft-orange/20 to-light-blue/20 overflow-hidden">
           {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-web/10 rounded-full -translate-y-1/2 translate-x-1/3"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/3"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-oxford-blue/10 rounded-full translate-y-1/2 -translate-x-1/3"></div>
 
           {/* Wave decoration */}
           <svg className="absolute bottom-0 left-0 w-full h-20 opacity-10" preserveAspectRatio="none" viewBox="0 0 1440 320">
-            <path fill="#FEA30D" d="M0,224L60,208C120,192,240,160,360,160C480,160,600,192,720,197.3C840,203,960,181,1080,170.7C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            <path fill="#D4AF37" d="M0,224L60,208C120,192,240,160,360,160C480,160,600,192,720,197.3C840,203,960,181,1080,170.7C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
           </svg>
 
           <div className="container mx-auto px-4 text-center relative z-10">
@@ -465,7 +465,7 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contatti" className="relative py-20 bg-gradient-to-br from-soft-orange/30 via-white to-light-blue/30 overflow-hidden">
           {/* Floating elements */}
-          <div className="absolute top-1/4 left-0 w-32 h-32 rounded-full bg-orange-web/20 blur-2xl animate-float"></div>
+          <div className="absolute top-1/4 left-0 w-32 h-32 rounded-full bg-gold-bright/20 blur-2xl animate-float"></div>
           <div className="absolute bottom-1/4 right-0 w-40 h-40 rounded-full bg-oxford-blue/20 blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
 
           <div className="container mx-auto px-4 relative z-10">
