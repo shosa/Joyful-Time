@@ -22,8 +22,9 @@ const StarRating = ({ rating }: { rating: number }) => {
 };
 
 declare global {
-    interface Window { 
+    interface Window {
         wpShowRatedWAv3: (id: string, year: string) => void;
+        wpShowReviews: (id: number, color: string) => void;
     }
 }
 
@@ -351,22 +352,25 @@ export default function Home() {
             <h3 className="text-center text-4xl font-serif-elegant text-oxford-blue mb-12">La Vostra Fiducia, Il Nostro Orgoglio</h3>
             <div className="grid lg:grid-cols-3 gap-12 items-center">
               
-              {/* Wedding Award Badge */}
+              {/* Matrimonio.com Reviews Widget */}
               <div className="lg:col-span-1 flex flex-col items-center justify-center text-center p-8">
-                <div id="wp-ratedWA">
-                    <a target="_blank" href="https://m.matrimonio.com/musica-matrimonio/joyful-time--e208010" rel="nofollow" title="Joyful Time, vincitore Wedding Awards 2025 Matrimonio.com">
-                        <img width="125" height="125" alt="Joyful Time, vincitore Wedding Awards 2025 Matrimonio.com" id="wp-ratedWA-img-2025" src="https://cdn1.matrimonio.com/img/badges/2025/badge-weddingawards_it_IT.jpg" />
-                    </a>
-                </div>
-                <Script 
-                  src="https://cdn1.matrimonio.com/_js/wp-rated.js?v=4" 
+                <Script
+                  src="https://cdn1.matrimonio.com/js/wp-widget.js?symfnw-IT73-1-20251002-011_www_m_"
                   strategy="afterInteractive"
                   onReady={() => {
-                    if (typeof window.wpShowRatedWAv3 === 'function') {
-                      window.wpShowRatedWAv3('208010', '2025');
+                    if (typeof window.wpShowReviews === 'function') {
+                      window.wpShowReviews(208010, "black");
                     }
                   }}
                 />
+                <div id="wp-widget-reviews">
+                  <div id="wp-widget-preview">
+                    Leggi <a href="https://www.matrimonio.com/musica-matrimonio/joyful-time--e208010/opinioni" rel="nofollow">le nostre recensioni</a> a &nbsp;
+                    <a href='https://www.matrimonio.com' rel="nofollow">
+                      <img src="https://cdn1.matrimonio.com/assets/img/logos/gen_logoHeader.svg" height="20" alt="Matrimonio.com" />
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Testimonials */}
@@ -547,10 +551,52 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Logo Matrimonio.com */}
-            <div className="flex justify-center">
+            {/* Wedding Award Badges + Logo Matrimonio.com */}
+            <div className="flex flex-col items-center gap-6">
+              <Script
+                src="https://cdn1.matrimonio.com/_js/wp-rated.js?v=4"
+                strategy="afterInteractive"
+                onReady={() => {
+                  if (typeof window.wpShowRatedWAv3 === 'function') {
+                    window.wpShowRatedWAv3('208010', '2025');
+                    window.wpShowRatedWAv3('208010', '2024');
+                    window.wpShowRatedWAv3('208010', '2023');
+                    window.wpShowRatedWAv3('208010', '2022');
+                  }
+                }}
+              />
+
+              {/* Prima linea: 4 badge */}
+              <div className="flex justify-center items-center gap-4">
+                {/* Badge 2022 */}
+                <div id="wp-ratedWA">
+                  <a target="_blank" href="https://www.matrimonio.com/musica-matrimonio/joyful-time--e208010" rel="nofollow" title="Joyful Time, vincitore Wedding Awards 2022 Matrimonio.com">
+                    <img width="125" height="125" alt="Joyful Time, vincitore Wedding Awards 2022 Matrimonio.com" id="wp-ratedWA-img-2022" src="https://cdn1.matrimonio.com/img/badges/2022/badge-weddingawards_it_IT.jpg" />
+                  </a>
+                </div>
+                {/* Badge 2023 */}
+                <div id="wp-ratedWA">
+                  <a target="_blank" href="https://www.matrimonio.com/musica-matrimonio/joyful-time--e208010" rel="nofollow" title="Joyful Time, vincitore Wedding Awards 2023 Matrimonio.com">
+                    <img width="125" height="125" alt="Joyful Time, vincitore Wedding Awards 2023 Matrimonio.com" id="wp-ratedWA-img-2023" src="https://cdn1.matrimonio.com/img/badges/2023/badge-weddingawards_it_IT.jpg" />
+                  </a>
+                </div>
+                {/* Badge 2024 */}
+                <div id="wp-ratedWA">
+                  <a target="_blank" href="https://www.matrimonio.com/musica-matrimonio/joyful-time--e208010" rel="nofollow" title="Joyful Time, vincitore Wedding Awards 2024 Matrimonio.com">
+                    <img width="125" height="125" alt="Joyful Time, vincitore Wedding Awards 2024 Matrimonio.com" id="wp-ratedWA-img-2024" src="https://cdn1.matrimonio.com/img/badges/2024/badge-weddingawards_it_IT.jpg" />
+                  </a>
+                </div>
+                {/* Badge 2025 */}
+                <div id="wp-ratedWA">
+                  <a target="_blank" href="https://www.matrimonio.com/musica-matrimonio/joyful-time--e208010" rel="nofollow" title="Joyful Time, vincitore Wedding Awards 2025 Matrimonio.com">
+                    <img width="125" height="125" alt="Joyful Time, vincitore Wedding Awards 2025 Matrimonio.com" id="wp-ratedWA-img-2025" src="https://cdn1.matrimonio.com/img/badges/2025/badge-weddingawards_it_IT.jpg" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Seconda linea: Logo Matrimonio.com */}
               <a
-                href="https://m.matrimonio.com/musica-matrimonio/joyful-time--e208010"
+                href="https://www.matrimonio.com/musica-matrimonio/joyful-time--e208010"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-transform duration-300 hover:scale-110"
