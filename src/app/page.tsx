@@ -189,6 +189,19 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Scroll Down Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <svg
+              className="w-8 h-8 text-white drop-shadow-lg"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </section>
 
         {/* About Us Section */}
@@ -208,7 +221,7 @@ export default function Home() {
 
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div data-animation="animate-slide-in-left">
-              <img src="/team-portrait.jpg" alt="Il Team di Joyful Time" className="rounded-lg shadow-2xl" />
+              <img src="/team-portrait.jpg" alt="Il Team di Joyful Time" className="rounded-lg shadow-2xl" loading="lazy" />
             </div>
             <div data-animation="animate-slide-in-right">
               <h3 className="text-4xl font-serif-elegant text-oxford-blue mb-6">Passione, Creatività, Professionalità</h3>
@@ -251,7 +264,7 @@ export default function Home() {
 
             {/* Immagine a destra */}
             <div data-animation="animate-slide-in-right" className="md:order-2">
-              <img src="/team-eventi.jpg" alt="Eventi Joyful Time" className="rounded-lg shadow-2xl" />
+              <img src="/team-eventi.jpg" alt="Eventi Joyful Time" className="rounded-lg shadow-2xl" loading="lazy" />
             </div>
           </div>
         </section>
@@ -280,8 +293,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
               {/* Service Card 1: Matrimoni */}
-              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 will-change-transform transition-all duration-500 hover:-translate-y-2 hover:shadow-orange-web/50">
-                <div className="absolute inset-0 bg-cover bg-center will-change-transform transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/matrimoni.jpg')"}}></div>
+              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transition-all duration-500 hover:-translate-y-2 hover:shadow-orange-web/50">
+                <img src="/matrimoni.jpg" alt="Matrimoni" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-orange-web/50 group-hover:from-orange-web/70 group-hover:to-pink-600/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -295,8 +308,8 @@ export default function Home() {
               </div>
 
               {/* Service Card 2: Eventi Privati */}
-              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 will-change-transform transition-all duration-500 hover:-translate-y-2 hover:shadow-oxford-blue/50">
-                <div className="absolute inset-0 bg-cover bg-center will-change-transform transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/private.jpg')"}}></div>
+              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transition-all duration-500 hover:-translate-y-2 hover:shadow-oxford-blue/50">
+                <img src="/private.jpg" alt="Eventi Privati" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-oxford-blue/50 group-hover:from-oxford-blue/70 group-hover:to-blue-900/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -310,8 +323,8 @@ export default function Home() {
               </div>
 
               {/* Service Card 3: Piazze & Locali */}
-              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 will-change-transform transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/50">
-                <div className="absolute inset-0 bg-cover bg-center will-change-transform transition-transform duration-700 ease-in-out group-hover:scale-110" style={{backgroundImage: "url('/piazze.jpg')"}}></div>
+              <div data-animation="animate-scale-in" className="relative rounded-3xl overflow-hidden shadow-2xl group h-96 transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/50">
+                <img src="/piazze.jpg" alt="Piazze e Locali" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-br from-black/50 to-gray-800/50 group-hover:from-purple-900/70 group-hover:to-gray-800/70 transition-all duration-500"></div>
                 <div className="relative h-full flex flex-col justify-end p-8 text-white">
                   <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -410,6 +423,7 @@ export default function Home() {
                 src="/mat_logo.svg"
                 alt="Matrimonio.com"
                 className="h-20 mx-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
               />
             </a>
           </div>
