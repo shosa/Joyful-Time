@@ -10,7 +10,7 @@ const StarRating = ({ rating }: { rating: number }) => {
       {[...Array(5)].map((_, index) => (
         <svg
           key={index}
-          className={`w-5 h-5 ${index < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+          className={`w-5 h-5 ${index < rating ? 'text-gold-bright drop-shadow-md' : 'text-gray-300'}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -161,7 +161,7 @@ export default function Home() {
             {/* Rating Stars */}
             <div className="flex justify-center gap-1 mb-3 md:mb-4 opacity-0 animate-fade-in relative z-10" style={{ animationDelay: '0.7s' }}>
               {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 md:w-6 md:h-6 text-orange-web" fill="currentColor" viewBox="0 0 20 20">
+                <svg key={i} className="w-5 h-5 md:w-6 md:h-6 text-gold-bright drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                 </svg>
               ))}
@@ -181,10 +181,9 @@ export default function Home() {
             </p>
             <div className="relative z-10 hidden md:block">
                 <button
-                  className="bg-gradient-to-r from-orange-web to-orange-peel text-white font-bold py-4 px-10 rounded-full transition-all duration-300 text-lg relative overflow-hidden group opacity-0 animate-fade-in shadow-lg hover:shadow-2xl hover:scale-105"
+                  className="btn-gold text-white font-bold py-4 px-10 rounded-full transition-all duration-300 text-lg opacity-0 animate-fade-in"
                   style={{ animationDelay: '1.5s' }}
                 >
-                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></span>
                   <span className="relative">Scrivici su WhatsApp</span>
                 </button>
               </div>
@@ -440,7 +439,7 @@ export default function Home() {
                 <h3 className="text-5xl md:text-6xl font-serif-elegant text-white mb-6 drop-shadow-2xl">Guarda il Nostro Spot</h3>
                 <p className="text-xl md:text-2xl font-sans-modern text-white/90 mb-8 drop-shadow-lg">Scopri l&apos;emozione dei nostri eventi</p>
                 <div className="flex items-center justify-center gap-4">
-                  <svg className="w-20 h-20 text-orange-web animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-20 h-20 text-gold-bright animate-pulse drop-shadow-2xl" fill="currentColor" viewBox="0 0 24 24" style={{filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.8))'}}>
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
@@ -475,7 +474,7 @@ export default function Home() {
                     <label htmlFor="message" className="block text-gray-700 font-sans-modern mb-2">Messaggio</label>
                     <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={5} className="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-orange-web focus:ring-2 focus:ring-orange-web/20 transition-all duration-300 bg-white/50" required></textarea>
                   </div>
-                  <button type="submit" disabled={formStatus.loading} className="w-full bg-gradient-to-r from-orange-web to-pink-600 text-white font-bold py-4 px-6 rounded-full hover:from-oxford-blue hover:to-blue-900 transition-all duration-300 disabled:bg-gray-400 shadow-lg hover:shadow-2xl hover:scale-105 transform">
+                  <button type="submit" disabled={formStatus.loading} className="w-full btn-gold text-white font-bold py-4 px-6 rounded-full transition-all duration-300 disabled:bg-gray-400 disabled:shadow-none">
                     {formStatus.loading ? 'Invio in corso...' : 'Invia Messaggio'}
                   </button>
                   {formStatus.success && <p className="text-green-500 mt-4">{formStatus.success}</p>}
@@ -489,10 +488,23 @@ export default function Home() {
                 <p className="font-sans-modern text-lg mb-8 text-gray-700">Preferisci parlarci direttamente? Chiamaci o scrivici su WhatsApp per una risposta più rapida.</p>
                 <div className="space-y-4">
                   <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-4 px-6 rounded-full hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-105 transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.849 6.069l-1.254 4.587 4.68-1.231zm9.35-6.448c-.273-.136-1.618-.799-1.869-.888-.251-.088-.434-.136-.617.137-.182.272-.707.888-.869 1.061-.163.173-.325.192-.601.056-.277-.137-1.176-.433-2.24-1.373-.828-.731-1.389-1.637-1.551-1.912-.162-.273-.017-.42.119-.557.121-.121.273-.318.41-.463.136-.145.182-.273.273-.455.091-.182.045-.344-.023-.481-.068-.136-.617-1.479-.844-2.021-.225-.542-.454-.466-.617-.474-.152-.008-.325-.008-.498-.008-.173 0-.455.068-.693.344-.238.273-.908.888-1.102 2.149-.194 1.26.194 2.474.39 2.691.195.217.771.888 1.865 1.666 1.094.777 1.864 1.245 2.522 1.588.658.344 1.181.273 1.54.163.381-.121 1.176-.481 1.343-.94.168-.459.168-.85.119-.94-.048-.09-.194-.136-.412-.225z"/></svg>
+                    <svg
+                      viewBox="0 0 32 32"
+                      className="w-6 h-6 mr-3"
+                      fill="currentColor"
+                    >
+                      <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.414 1.414-5.247-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.07 0-7.589 6.145-13.733 13.733-13.733s13.733 6.145 13.733 13.733-6.145 13.733-13.733 13.733zM21.937 18.645c-0.357-0.179-2.103-1.040-2.43-1.161-0.326-0.121-0.565-0.179-0.804 0.179s-0.923 1.161-1.13 1.4c-0.208 0.239-0.417 0.268-0.774 0.089s-1.510-0.557-2.876-1.779c-1.063-0.951-1.78-2.126-1.988-2.483s-0.022-0.549 0.157-0.728c0.161-0.161 0.357-0.417 0.536-0.625s0.238-0.357 0.357-0.595c0.119-0.238 0.060-0.446-0.030-0.625s-0.804-1.937-1.102-2.653c-0.290-0.696-0.585-0.601-0.804-0.612-0.208-0.011-0.446-0.013-0.685-0.013s-0.625 0.089-0.953 0.446c-0.328 0.357-1.25 1.220-1.25 2.975s1.279 3.451 1.458 3.689c0.179 0.238 2.517 3.842 6.098 5.385 0.852 0.368 1.518 0.587 2.037 0.751 0.856 0.272 1.636 0.233 2.253 0.141 0.687-0.103 2.103-0.860 2.4-1.690s0.297-1.542 0.208-1.690c-0.089-0.148-0.327-0.238-0.685-0.417z"/>
+                    </svg>
                     Scrivici su WhatsApp
                   </button>
-                  <button className="w-full border-2 border-oxford-blue text-oxford-blue font-bold py-4 px-6 rounded-full hover:bg-oxford-blue hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 transform">
+                  <button className="w-full btn-gold-outline font-bold py-4 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 transform flex items-center justify-center">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-6 h-6 mr-3"
+                      fill="currentColor"
+                    >
+                      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
                     Chiama Ora
                   </button>
                 </div>

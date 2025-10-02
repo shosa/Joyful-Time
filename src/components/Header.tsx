@@ -49,7 +49,7 @@ const Header = () => {
                 {item}
               </a>
             ))}
-            <button className="bg-orange-web text-white font-bold py-2 px-4 rounded-full hover:bg-black transition-all duration-300">
+            <button className="btn-gold text-white font-bold py-2 px-4 rounded-full transition-all duration-300">
                 Scrivici su WhatsApp
             </button>
           </nav>
@@ -87,10 +87,10 @@ const Header = () => {
               {item}
             </a>
           ))}
-          <button className="mt-8 bg-orange-web text-white font-bold py-3 px-6 rounded-full">
+          <button className="mt-8 btn-gold text-white font-bold py-3 px-6 rounded-full">
               Scrivici su WhatsApp
           </button>
-           <button className="border-2 border-white text-white font-bold py-3 px-6 rounded-full">
+           <button className="btn-gold-outline font-bold py-3 px-6 rounded-full !border-gold !text-gold-light hover:!text-white">
                 Chiama ora
             </button>
         </div>
